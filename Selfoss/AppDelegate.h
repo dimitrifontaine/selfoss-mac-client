@@ -51,6 +51,7 @@
     IBOutlet NSTextField *titreFlux;
     IBOutlet NSTextField *catFlux;
     IBOutlet NSTextField *urlFlux;
+    
     IBOutlet id selfossView;
     IBOutlet id selfossWindow;
     
