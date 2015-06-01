@@ -3,7 +3,7 @@
 //  Selfoss
 //
 //  Created by Dimitri on 01/10/13.
-//  Copyright (c) 2014 Graphic-identité. All rights reserved.
+//  Copyright (c) 2015 Graphic-identité. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>
