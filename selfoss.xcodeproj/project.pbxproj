@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		270D0ECD1B1D945A00FCB4C9 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 270D0ECF1B1D945A00FCB4C9 /* Credits.rtf */; };
 		272EB6711A40693E006EFF1C /* picto-06.png in Resources */ = {isa = PBXBuildFile; fileRef = 272EB66B1A40693E006EFF1C /* picto-06.png */; };
 		272EB6721A40693E006EFF1C /* picto-05.png in Resources */ = {isa = PBXBuildFile; fileRef = 272EB66C1A40693E006EFF1C /* picto-05.png */; };
 		272EB6731A40693E006EFF1C /* picto-01.png in Resources */ = {isa = PBXBuildFile; fileRef = 272EB66D1A40693E006EFF1C /* picto-01.png */; };
@@ -23,12 +24,15 @@
 		2771D9C817FB2D3D006D74BD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2771D9C717FB2D3D006D74BD /* AppDelegate.m */; };
 		2771D9CB17FB2D3D006D74BD /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2771D9C917FB2D3D006D74BD /* MainMenu.xib */; };
 		27D1A0AD1B1865520010B723 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27D1A0AC1B1865520010B723 /* Images.xcassets */; };
-		27EB54EC182CD73300D9695A /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 27EB54EB182CD73300D9695A /* Credits.rtf */; };
 		27FF99311B1CB89700125504 /* appl.icns in Resources */ = {isa = PBXBuildFile; fileRef = 27FF99301B1CB89700125504 /* appl.icns */; };
 		9E97BB741A2E5A1F00EFE7FC /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E97BB731A2E5A1F00EFE7FC /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		270D0ECE1B1D945A00FCB4C9 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = de; path = de.lproj/Credits.rtf; sourceTree = "<group>"; };
+		270D0ED01B1D947200FCB4C9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		271EB9851B1D926D001EA101 /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		271EB9861B1D926D001EA101 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		272EB66B1A40693E006EFF1C /* picto-06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "picto-06.png"; sourceTree = "<group>"; };
 		272EB66C1A40693E006EFF1C /* picto-05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "picto-05.png"; sourceTree = "<group>"; };
 		272EB66D1A40693E006EFF1C /* picto-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "picto-01.png"; sourceTree = "<group>"; };
@@ -52,7 +56,6 @@
 		2771D9C717FB2D3D006D74BD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		2771D9CA17FB2D3D006D74BD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		27D1A0AC1B1865520010B723 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		27EB54EB182CD73300D9695A /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		27FF99301B1CB89700125504 /* appl.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = appl.icns; sourceTree = "<group>"; };
 		9E97BB731A2E5A1F00EFE7FC /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -142,7 +145,7 @@
 		2771D9BB17FB2D3D006D74BD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				27EB54EB182CD73300D9695A /* Credits.rtf */,
+				270D0ECF1B1D945A00FCB4C9 /* Credits.rtf */,
 				2771D9BC17FB2D3D006D74BD /* Selfoss-Info.plist */,
 				2771D9BD17FB2D3D006D74BD /* InfoPlist.strings */,
 				2771D9C017FB2D3D006D74BD /* main.m */,
@@ -186,6 +189,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				de,
 			);
 			mainGroup = 2771D9A817FB2D3C006D74BD;
 			productRefGroup = 2771D9B217FB2D3C006D74BD /* Products */;
@@ -205,7 +209,7 @@
 				275DE49F1B174B1A00A514D0 /* selfoss02.png in Resources */,
 				272EB6741A40693E006EFF1C /* picto-02.png in Resources */,
 				272EB6721A40693E006EFF1C /* picto-05.png in Resources */,
-				27EB54EC182CD73300D9695A /* Credits.rtf in Resources */,
+				270D0ECD1B1D945A00FCB4C9 /* Credits.rtf in Resources */,
 				275DE4A11B174B1A00A514D0 /* selfoss04.png in Resources */,
 				272EB6761A40693E006EFF1C /* picto-04.png in Resources */,
 				27D1A0AD1B1865520010B723 /* Images.xcassets in Resources */,
@@ -235,10 +239,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		270D0ECF1B1D945A00FCB4C9 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				270D0ECE1B1D945A00FCB4C9 /* de */,
+				270D0ED01B1D947200FCB4C9 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
 		2771D9BD17FB2D3D006D74BD /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				2771D9BE17FB2D3D006D74BD /* en */,
+				271EB9861B1D926D001EA101 /* de */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -247,6 +261,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				2771D9CA17FB2D3D006D74BD /* en */,
+				271EB9851B1D926D001EA101 /* de */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
