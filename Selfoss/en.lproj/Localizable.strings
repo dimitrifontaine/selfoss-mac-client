@@ -1,0 +1,62 @@
+/* 
+  Localizable.strings
+  selfoss
+
+  Created by dimitri on 02/06/2015.
+  Copyright (c) 2015 Graphic-identité. All rights reserved.
+*/
+
+
+
+//PREFERENCES
+
+"(go to github project page)" = "(go to github project page)";
+"Default RSS app" = "Default RSS app";
+"Hide menu at startup" = "Hide menu at startup";
+"Auto-reload" = "Auto-reload";
+"Animated dock icon" = "Animated dock icon";
+"Notifications" = "Notifications";
+"Fullscreen at startup" = "Fullscreen at startup";
+"Validate" = "Validate";
+"seconds (active app)" = "seconds (active app)";
+"minutes (inactive app)" = "minutes (inactive app)";
+"badge counter refresh time interval" = "badge counter refresh time interval";
+"My Selfoss URL" = "My Selfoss URL";
+
+
+//ADD FEED
+
+"Feed title" = "Feed title";
+"Categories (up to 3, write or select in list)" = "Categories (up to 3, write or select in list)";
+"Cancel" = "Cancel";
+"Add" = "Add";
+
+
+"Login" = "Login";
+"Password" = "Password";
+
+
+
+//ERRORS
+
+"Bad feed URL" = "Bad feed URL";
+"impossible to initialize feed" = "impossible to initialize feed";
+
+"An error occured" = "An error occured";
+"check your feed" = "check your feed";
+
+"Not a valid Selfoss URL\nor protected with password" = "Not a valid Selfoss URL\nor protected with password";
+
+
+
+
+//OTHERS
+
+"new item(s) avalaible" = "new item(s) avalaible";
+
+"Preferences" = "Preferences";
+"Hide menu" = "Hide menu";
+"Mark all as read" = "Mark all as read";
+"Stared" = "Stared";
+"All items" = "All items";
+"Unread" = "Unread";

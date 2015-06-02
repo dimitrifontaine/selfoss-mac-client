@@ -1,0 +1,62 @@
+/* 
+  Localizable.strings
+  selfoss
+
+  Created by dimitri on 02/06/2015.
+  Copyright (c) 2015 Graphic-identité. All rights reserved.
+*/
+
+
+
+//PREFERENCES
+
+"(go to github project page)" = "(auf Aktualisierungen prüfen - github)";
+"Default RSS app" = "Standardprogramm für RSS";
+"Hide menu at startup" = "Menü beim Start ausblenden";
+"Auto-reload" = "Automatisch aktualisieren";
+"Animated dock icon" = "Dockicon animieren";
+"Notifications" = "Benachrichtigungen";
+"Fullscreen at startup" = "Vollbild beim Start";
+"Validate" = "Speichern";
+"seconds (active app)" = "Sek. (App aktiv)";
+"minutes (inactive app)" = "Min. (App inaktiv)";
+"badge counter refresh time interval" = "Kennzeichen Aktualisierungsintervall";
+"My Selfoss URL" = "URL der Selfoss Installation";
+
+
+//ADD FEED
+
+"Feed title" = "Feed Titel";
+"Categories (up to 3, write or select in list)" = "Kategorien (max. 3, eintragen oder aus Liste wählen)";
+"Cancel" = "Abbrechen";
+"Add" = "Hinzufügen";
+
+
+"Login" = "Benutzername";
+"Password" = "Passwort";
+
+
+
+//ERRORS
+
+"Bad feed URL" = "Bad feed URL";
+"impossible to initialize feed" = "impossible to initialize feed";
+
+"An error occured" = "An error occured";
+"check your feed" = "check your feed";
+
+"Not a valid Selfoss URL\nor protected with password" = "Not a valid Selfoss URL\nor protected with password";
+
+
+
+
+//OTHERS
+
+"new item(s) avalaible" = "new item(s) avalaible";
+
+"Preferences" = "Einstellungen";
+"Hide menu" = "Menü umschalten";
+"Mark all as read" = "Alles als gelesen markieren";
+"Stared" = "Favoriten";
+"All items" = "Neueste";
+"Unread" = "Ungelesen";
