@@ -62,10 +62,8 @@ static int currentFrame;
     
     
     
-    
-    NSString *actualVerion = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
-    [github setTitle:    [NSString stringWithFormat:@"version : %@ - (go to github project page)", actualVerion]];
-    
+    [self localize];
+
     
     
     feedScheme = (__bridge CFStringRef)@"feed";
@@ -181,6 +179,40 @@ static int currentFrame;
 }
 
 
+-(void) localize
+{
+    NSString *actualVerion = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+    [github setTitle:    [NSString stringWithFormat:@"Version : %@ - %@", actualVerion, NSLocalizedString(@"(go to github project page)", @"(go to github project page)")]];
+    
+    
+    [checkdefault setTitle: NSLocalizedString(@"Default RSS app", @"Default RSS app")];
+    [menuHiddenPref setTitle: NSLocalizedString(@"Hide menu at startup", @"Hide menu at startup")];
+    [menuReloadPref setTitle: NSLocalizedString(@"Auto-reload", @"Auto-reload")];
+    [menuAnim setTitle: NSLocalizedString(@"Animated dock icon", @"Animated dock icon")];
+    [menuNotify setTitle: NSLocalizedString(@"Notifications", @"Notifications")];
+    [menuFullscreen setTitle: NSLocalizedString(@"Fullscreen at startup", @"Fullscreen at startup")];
+    [ValidatePref setTitle: NSLocalizedString(@"Validate", @"Validate")];
+    [badgeCounter setStringValue: NSLocalizedString(@"badge counter refresh time interval", @"badge counter refresh time interval")];
+    [selfossURLtext setStringValue: NSLocalizedString(@"My Selfoss URL", @"My Selfoss URL")];
+    
+    [feedTitleText setStringValue: NSLocalizedString(@"Feed title", @"Feed title")];
+    [categoriesText setStringValue: NSLocalizedString(@"Categories (up to 3, write or select in list)", @"Categories (up to 3, write or select in list)")];
+    [CancelText setTitle: NSLocalizedString(@"Cancel", @"Cancel")];
+    [AddText setTitle: NSLocalizedString(@"Add", @"Add")];
+    
+    
+    [FeedLogin setStringValue: NSLocalizedString(@"Login", @"Login")];
+    [FeedPassword setStringValue: NSLocalizedString(@"Password", @"Password")];
+    
+    [butPref setToolTip: NSLocalizedString(@"Preferences", @"Preferences")];
+    [butHide setToolTip: NSLocalizedString(@"Hide menu", @"Hide menu")];
+    [butMark setToolTip: NSLocalizedString(@"Mark all as read", @"Mark all as read")];
+    [butStar setToolTip: NSLocalizedString(@"Stared", @"Stared")];
+    [butAll setToolTip: NSLocalizedString(@"All items", @"All items")];
+    [butNew setToolTip: NSLocalizedString(@"Unread", @"Unread")];
+
+}
+
 
 
 
@@ -254,8 +286,8 @@ static int currentFrame;
         {
             NSAlert *alert = [[NSAlert alloc] init];
             [alert addButtonWithTitle:@"OK"];
-            [alert setMessageText:@"Bad feed URL"];
-            [alert setInformativeText:@"impossible to initialize feed"];
+            [alert setMessageText: NSLocalizedString(@"Bad feed URL", @"Bad feed URL")];
+            [alert setInformativeText: NSLocalizedString(@"impossible to initialize feed",@"impossible to initialize feed")];
             [alert setAlertStyle:NSCriticalAlertStyle];
             [alert runModal];
             [alert release];
@@ -345,8 +377,8 @@ static int currentFrame;
         {
             NSAlert *alert = [[NSAlert alloc] init];
             [alert addButtonWithTitle:@"OK"];
-            [alert setMessageText:@"An error occured"];
-            [alert setInformativeText:@"check your feed"];
+            [alert setMessageText: NSLocalizedString(@"An error occured",@"An error occured")];
+            [alert setInformativeText: NSLocalizedString(@"check your feed",@"check your feed")];
             [alert setAlertStyle:NSCriticalAlertStyle];
             [alert runModal];
             [alert release];
@@ -493,7 +525,7 @@ static int currentFrame;
         [alert addButtonWithTitle:@"OK"];
         //[alert addButtonWithTitle:@"Cancel"];
         [alert setMessageText:@"Selfoss URL"];
-        [alert setInformativeText:@"Not a valid Selfoss URL\nor protected with password"];
+        [alert setInformativeText: NSLocalizedString(@"Not a valid Selfoss URL\nor protected with password",@"Not a valid Selfoss URL\nor protected with password")];
         [alert setAlertStyle:NSCriticalAlertStyle];
         
         if ([alert runModal] == NSAlertSecondButtonReturn) {
@@ -525,8 +557,8 @@ static int currentFrame;
     unactivetime = [[[defaults stringForKey:selfossUnactive] stringByTrimmingCharactersInSet:[[NSCharacterSet decimalDigitCharacterSet] invertedSet]] intValue];
     [slideTimeActive setDoubleValue:activetime];
     [slideTimeUnactive setDoubleValue:unactivetime];
-    [textTimeActive setStringValue:[NSString stringWithFormat:@"%d seconds (active app)", activetime]];
-    [textTimeUnactive setStringValue:[NSString stringWithFormat:@"%d minutes (inactive app)", unactivetime]];
+    [textTimeActive setStringValue:[NSString stringWithFormat:@"%d %@", activetime, NSLocalizedString(@"seconds (active app)", @"seconds (active app)")]];
+    [textTimeUnactive setStringValue:[NSString stringWithFormat:@"%d %@", unactivetime, NSLocalizedString(@"minutes (inactive app)", @"minutes (inactive app)")]];
 }
 
 - (IBAction)valueChanged:(NSSlider *)sender {
@@ -583,10 +615,10 @@ static int currentFrame;
 
 - (BOOL)webView:(WebView *)sender runJavaScriptConfirmPanelWithMessage:(NSString *)message initiatedByFrame:(WebFrame *)frame {
     
-    NSInteger result = NSRunInformationalAlertPanel(NSLocalizedString(@"Selfoss", @""),  // title
+    NSInteger result = NSRunInformationalAlertPanel(NSLocalizedString(@"Selfoss", @"Selfoss"),  // title
                                                     message,                // message
-                                                    NSLocalizedString(@"OK", @""),      // default button
-                                                    NSLocalizedString(@"Cancel", @""),    // alt button
+                                                    NSLocalizedString(@"OK", @"OK"),      // default button
+                                                    NSLocalizedString(@"Cancel", @"Cancel"),    // alt button
                                                     nil);
     return NSAlertDefaultReturn == result;
 }
@@ -648,7 +680,7 @@ static int currentFrame;
                 if (Ntilenumber < Nunread)  {
                     NSUserNotification *notification = [[NSUserNotification alloc] init];
                     notification.title = @"Selfoss";
-                    notification.informativeText = [NSString stringWithFormat:@"%d new post(s) avalaible",Nnew];
+                    notification.informativeText = [NSString stringWithFormat:@"%d %@",Nnew ,NSLocalizedString(@"new item(s) avalaible",@"new item(s) avalaible")];
                     notification.soundName = NSUserNotificationDefaultSoundName;
                     [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
                 }

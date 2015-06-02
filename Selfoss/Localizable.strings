@@ -1,0 +1,62 @@
+/* 
+  Localizable.strings
+  selfoss
+
+  Created by dimitri on 02/06/2015.
+  Copyright (c) 2015 Graphic-identité. All rights reserved.
+*/
+
+
+
+//PREFERENCES
+
+"(go to github project page)" = "(aller sur la page github du projet)";
+"Default RSS app" = "Application RSS par défaut";
+"Hide menu at startup" = "Cacher le menu au démarrage";
+"Auto-reload" = "Rechargement automatique";
+"Animated dock icon" = "Icone dock animé";
+"Notifications" = "Notifications";
+"Fullscreen at startup" = "Plein-écran au démarrage";
+"Validate" = "Valider";
+"seconds (active app)" = "secondes (app active)";
+"minutes (inactive app)" = "minutes (app inactive)";
+"badge counter refresh time interval" = "Rafraîchissement du compteur";
+"My Selfoss URL" = "Mon adresse Selfoss";
+
+
+//ADD FEED
+
+"Feed title" = "Titre du flux";
+"Categories (up to 3, write or select in list)" = "Catégories (jusqu'à 3, écrire ou sélectionner dans la liste)";
+"Cancel" = "Annuler";
+"Add" = "Ajouter";
+
+
+"Login" = "Identifiant";
+"Password" = "Mot de passe";
+
+
+
+//ERRORS
+
+"Bad feed URL" = "Erreur dans l'URL du flux";
+"impossible to initialize feed" = "impossible d'initialiser le flux";
+
+"An error occured" = "Une erreur est intervenue";
+"check your feed" = "vérifiez votre flux";
+
+"Not a valid Selfoss URL\nor protected with password" = "URL selfoss non valide \nou protégée par mot de passe";
+
+
+
+
+//OTHERS
+
+"new item(s) avalaible" = "nouveau(x) article(s) disponible(s)";
+
+"Preferences" = "Préférences";
+"Hide menu" = "Cacher le menu";
+"Mark all as read" = "Marquer tous comme lus";
+"Stared" = "Favoris";
+"All items" = "Tous les articles";
+"Unread" = "Non-lus";

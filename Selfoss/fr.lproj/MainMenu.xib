@@ -88,6 +88,11 @@
                             <menuItem isSeparatorItem="YES" id="149">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
+                            <menuItem title="Check for update" keyEquivalent="u" id="HLC-2L-wnZ">
+                                <connections>
+                                    <action selector="checkUpdate2:" target="494" id="O3M-eS-zpF"/>
+                                </connections>
+                            </menuItem>
                             <menuItem title="Quit Selfoss" keyEquivalent="q" id="136">
                                 <connections>
                                     <action selector="terminate:" target="-3" id="449"/>
@@ -187,25 +192,11 @@
         </window>
         <customObject id="494" customClass="AppDelegate">
             <connections>
-                <outlet property="AddText" destination="b2w-GP-psO" id="d4g-q2-UW4"/>
-                <outlet property="CancelText" destination="1DK-7V-4Us" id="Tv4-IC-5BD"/>
-                <outlet property="FeedLogin" destination="72k-qg-1Jc" id="AXv-5m-JyO"/>
-                <outlet property="FeedPassword" destination="Xzf-kP-f41" id="biP-eM-zpz"/>
-                <outlet property="ValidatePref" destination="iUt-TO-stK" id="ZDI-HQ-3mQ"/>
                 <outlet property="addFluxWindow" destination="FVN-bA-xew" id="lgW-9n-wKQ"/>
-                <outlet property="badgeCounter" destination="VOz-Rl-tAr" id="ZpI-7t-TYm"/>
-                <outlet property="butAll" destination="F1Z-Go-sKr" id="MD9-wK-Ui0"/>
-                <outlet property="butHide" destination="af7-63-2sJ" id="OZz-e9-v34"/>
-                <outlet property="butMark" destination="aYb-nT-OWe" id="REJ-dt-aDT"/>
-                <outlet property="butNew" destination="9KA-9Z-KZ6" id="LCQ-8z-7nC"/>
-                <outlet property="butPref" destination="eyn-50-Ht0" id="X5t-Te-nhf"/>
-                <outlet property="butStar" destination="pDn-s5-vZn" id="5E1-yk-R1a"/>
                 <outlet property="catFluxBox" destination="zjH-ev-dEp" id="dgf-Eq-gLC"/>
                 <outlet property="catFluxBox2" destination="qBP-4D-hKe" id="aDr-Xx-GQa"/>
                 <outlet property="catFluxBox3" destination="jlp-UP-2fD" id="AxI-7L-eI4"/>
-                <outlet property="categoriesText" destination="5ue-Vy-hBR" id="Sos-V9-4jp"/>
                 <outlet property="checkdefault" destination="B7H-NV-61g" id="lm4-78-wv7"/>
-                <outlet property="feedTitleText" destination="aim-0r-nmo" id="aLq-HG-QlI"/>
                 <outlet property="github" destination="68t-c7-voP" id="ZX4-l9-A1v"/>
                 <outlet property="loginPanel" destination="lw1-Nm-RcI" id="3ze-4M-heB"/>
                 <outlet property="menuAnim" destination="pJk-qN-hYH" id="hz6-Yu-ePA"/>
@@ -215,7 +206,6 @@
                 <outlet property="menuReloadPref" destination="C0h-85-tn8" id="CTk-AP-3D2"/>
                 <outlet property="pass" destination="hbC-E6-2Uf" id="4nf-Qa-bx1"/>
                 <outlet property="prefPanel" destination="4GH-a5-WxU" id="CGf-TQ-DpQ"/>
-                <outlet property="selfossURLtext" destination="bIB-Qn-h8f" id="FH1-31-wue"/>
                 <outlet property="selfossUrlField" destination="kl1-eG-X0K" id="9qN-6E-2GQ"/>
                 <outlet property="selfossView" destination="559" id="583"/>
                 <outlet property="selfossWindow" destination="371" id="584"/>
@@ -229,7 +219,7 @@
             </connections>
         </customObject>
         <customObject id="420" customClass="NSFontManager"/>
-        <window title="Add a feed…" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="FVN-bA-xew" customClass="NSPanel">
+        <window title="Ajouter un flux…" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="FVN-bA-xew" customClass="NSPanel">
             <windowStyleMask key="styleMask" titled="YES" utility="YES"/>
             <rect key="contentRect" x="452" y="256" width="566" height="167"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
@@ -244,6 +234,15 @@
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="aim-0r-nmo">
+                        <rect key="frame" x="18" y="143" width="58" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="feed title" id="ob6-GQ-mfB">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
                     <textField hidden="YES" verticalHuggingPriority="750" id="viT-UA-9Mx">
@@ -311,7 +310,7 @@ Gw
                         </comboBoxCell>
                     </comboBox>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="5ue-Vy-hBR">
-                        <rect key="frame" x="18" y="93" width="530" height="17"/>
+                        <rect key="frame" x="18" y="93" width="255" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="categories (up to 3, write or select in list)" id="dtd-A4-I2B">
                             <font key="font" metaFont="system"/>
@@ -328,20 +327,11 @@ Gw
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="aim-0r-nmo">
-                        <rect key="frame" x="18" y="143" width="530" height="17"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="feed title" id="ob6-GQ-mfB">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
                 </subviews>
             </view>
             <point key="canvasLocation" x="766" y="-245.5"/>
         </window>
-        <window title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="4GH-a5-WxU" customClass="NSPanel">
+        <window title="Préférences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="4GH-a5-WxU" customClass="NSPanel">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" utility="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="350" y="393" width="530" height="289"/>
@@ -350,6 +340,15 @@ Gw
                 <rect key="frame" x="0.0" y="-1" width="530" height="289"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="c1d-pW-YmQ">
+                        <rect key="frame" x="37" y="144" width="215" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="1-30 sec (active app)" id="dyN-gW-kbb">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="wVD-fk-Cwb">
                         <rect key="frame" x="284" y="144" width="215" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -360,7 +359,7 @@ Gw
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="VOz-Rl-tAr">
-                        <rect key="frame" x="37" y="194" width="462" height="17"/>
+                        <rect key="frame" x="155" y="194" width="223" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="badge counter refresh time interval" id="M9g-v8-dFY">
                             <font key="font" metaFont="system"/>
@@ -369,7 +368,7 @@ Gw
                         </textFieldCell>
                     </textField>
                     <button verticalHuggingPriority="750" id="B7H-NV-61g">
-                        <rect key="frame" x="37" y="101" width="243" height="25"/>
+                        <rect key="frame" x="37" y="101" width="198" height="25"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="check" title="default RSS app" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="iuY-Fh-rhO">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -390,7 +389,7 @@ Gw
                         <sliderCell key="cell" state="on" alignment="left" minValue="1" maxValue="30" doubleValue="17" tickMarkPosition="above" numberOfTickMarks="30" allowsTickMarkValuesOnly="YES" sliderType="linear" id="RaZ-MR-PTo"/>
                     </slider>
                     <button verticalHuggingPriority="750" id="DFf-Gb-nBW">
-                        <rect key="frame" x="37" y="74" width="243" height="25"/>
+                        <rect key="frame" x="37" y="74" width="198" height="25"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="check" title="hide menu at startup" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="hej-gJ-soL">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -398,7 +397,7 @@ Gw
                         </buttonCell>
                     </button>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="bIB-Qn-h8f">
-                        <rect key="frame" x="37" y="261" width="462" height="17"/>
+                        <rect key="frame" x="213" y="261" width="105" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="my selfoss URL" id="g0R-3z-pkx">
                             <font key="font" metaFont="system"/>
@@ -430,7 +429,7 @@ Gw
                         </textFieldCell>
                     </textField>
                     <button verticalHuggingPriority="750" id="C0h-85-tn8">
-                        <rect key="frame" x="284" y="101" width="228" height="25"/>
+                        <rect key="frame" x="284" y="101" width="198" height="25"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="check" title="auto-reload" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Vxl-Du-xYh">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -438,7 +437,7 @@ Gw
                         </buttonCell>
                     </button>
                     <button verticalHuggingPriority="750" id="x4B-Z2-Ium">
-                        <rect key="frame" x="37" y="47" width="243" height="25"/>
+                        <rect key="frame" x="37" y="47" width="198" height="25"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="check" title="fullscreen at startup" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="XMD-Kj-Tof">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -446,7 +445,7 @@ Gw
                         </buttonCell>
                     </button>
                     <button verticalHuggingPriority="750" id="kys-pf-4ni">
-                        <rect key="frame" x="284" y="74" width="228" height="25"/>
+                        <rect key="frame" x="284" y="74" width="198" height="25"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="check" title="notifications" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="86s-SY-NCs">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -454,7 +453,7 @@ Gw
                         </buttonCell>
                     </button>
                     <button verticalHuggingPriority="750" id="pJk-qN-hYH">
-                        <rect key="frame" x="284" y="47" width="228" height="25"/>
+                        <rect key="frame" x="284" y="47" width="198" height="25"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="check" title="animated dock icon" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="yvb-K9-fZg">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -462,7 +461,7 @@ Gw
                         </buttonCell>
                     </button>
                     <button verticalHuggingPriority="750" id="iUt-TO-stK">
-                        <rect key="frame" x="387" y="4" width="116" height="32"/>
+                        <rect key="frame" x="387" y="6" width="116" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="validate" bezelStyle="rounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="l02-fu-8kU">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -486,15 +485,6 @@ DQ
                             <action selector="github:" target="494" id="rgE-wS-1rs"/>
                         </connections>
                     </button>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="c1d-pW-YmQ">
-                        <rect key="frame" x="37" y="144" width="215" height="17"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="1-30 sec (active app)" id="dyN-gW-kbb">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
                 </subviews>
             </view>
             <point key="canvasLocation" x="228" y="-205.5"/>
@@ -518,9 +508,18 @@ DQ
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Xzf-kP-f41">
-                        <rect key="frame" x="18" y="86" width="240" height="17"/>
+                        <rect key="frame" x="18" y="86" width="64" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="password" id="p54-kl-6T6">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="72k-qg-1Jc">
+                        <rect key="frame" x="18" y="136" width="34" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="login" id="lqn-vj-0rY">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -552,15 +551,6 @@ DQ
                             </allowedInputSourceLocales>
                         </secureTextFieldCell>
                     </secureTextField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="72k-qg-1Jc">
-                        <rect key="frame" x="18" y="136" width="240" height="17"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="login" id="lqn-vj-0rY">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
                 </subviews>
             </view>
             <point key="canvasLocation" x="952" y="28.5"/>

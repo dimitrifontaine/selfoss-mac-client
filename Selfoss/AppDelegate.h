@@ -12,7 +12,14 @@
 
 @interface AppDelegate : NSObject <NSApplicationDelegate,NSURLDownloadDelegate,WKUIDelegate,NSUserNotificationCenterDelegate>
 {
-
+    
+    IBOutlet NSButton *butPref;
+    IBOutlet NSButton *butHide;
+    IBOutlet NSButton *butMark;
+    IBOutlet NSButton *butStar;
+    IBOutlet NSButton *butAll;
+    IBOutlet NSButton *butNew;
+    
     IBOutlet NSPanel *loginPanel;
     IBOutlet NSSecureTextField *pass;
     IBOutlet NSTextField *user;
@@ -29,8 +36,18 @@
     IBOutlet NSButton *menuAnim;
     IBOutlet NSButton *menuNotify;
     IBOutlet NSButton *menuFullscreen;
-
+    IBOutlet NSTextField *selfossURLtext;
+    IBOutlet NSTextField *badgeCounter;
+    IBOutlet NSButton *ValidatePref;
     IBOutlet NSButton *github;
+    
+    IBOutlet NSTextField *feedTitleText;
+    IBOutlet NSTextField *categoriesText;
+    IBOutlet NSButton *CancelText;
+    IBOutlet NSButton *AddText;
+    
+    IBOutlet NSTextField *FeedLogin;
+    IBOutlet NSTextField *FeedPassword;
     
     CFStringRef feedScheme;
     CFStringRef bundleID;
@@ -51,7 +68,6 @@
     IBOutlet NSTextField *titreFlux;
     IBOutlet NSTextField *catFlux;
     IBOutlet NSTextField *urlFlux;
-    
     IBOutlet id selfossView;
     IBOutlet id selfossWindow;
     

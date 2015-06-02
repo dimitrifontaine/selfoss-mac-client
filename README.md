@@ -1,2 +1,2 @@
 # selfoss-mac-client
-A mac client for selfoss - version 1.15
+A mac client for selfoss - version 1.16
