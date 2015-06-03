@@ -9,7 +9,7 @@ Download the app [here!](https://github.com/dimitrifontaine/selfoss-mac-client/r
 
 Selfoss Client features:
 
-- Same selfoss design (this app is just like a web explorer) 
+- Same selfoss design (this app is just like a web browser) 
 - Animated dock icon with badge counter
 - Toggle hide/unhide selfoss sidebar
 - selfoss shortkeys support
