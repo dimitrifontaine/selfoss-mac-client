@@ -53,7 +53,7 @@
 "Bad feed URL" = "Bad feed URL";
 "impossible to initialize feed" = "impossible to initialize feed";
 
-"An error occured" = "An error occured";
+"An error occurred" = "An error occurred";
 "check your feed" = "check your feed";
 
 "Not a valid Selfoss URL\nor protected with password" = "Not a valid Selfoss URL\nor protected with password";
@@ -63,7 +63,7 @@
 
 //OTHERS
 
-"new item(s) avalaible" = "new item(s) avalaible";
+"new item(s) available" = "new item(s) available";
 
 "Preferences" = "Einstellungen";
 "Hide menu" = "Menü umschalten";

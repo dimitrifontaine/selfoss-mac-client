@@ -13,7 +13,7 @@
 "Copy" = "Copier";
 "Paste" = "Coller";
 "Fullscreen" = "Plein écran";
-"Reload Selfoss" = "Recherger Selfoss";
+"Reload Selfoss" = "Recharger Selfoss";
 "Hide Selfoss" = "Cacher Selfoss";
 "Quit Selfoss" = "Quitter Selfoss";
 
@@ -53,7 +53,7 @@
 "Bad feed URL" = "Erreur dans l'URL du flux";
 "impossible to initialize feed" = "impossible d'initialiser le flux";
 
-"An error occured" = "Une erreur est intervenue";
+"An error occurred" = "Une erreur est intervenue";
 "check your feed" = "vérifiez votre flux";
 
 "Not a valid Selfoss URL\nor protected with password" = "URL selfoss non valide \nou protégée par mot de passe";
@@ -63,7 +63,7 @@
 
 //OTHERS
 
-"new item(s) avalaible" = "nouveau(x) article(s) disponible(s)";
+"new item(s) available" = "nouveau(x) article(s) disponible(s)";
 
 "Preferences" = "Préférences";
 "Hide menu" = "Cacher le menu";

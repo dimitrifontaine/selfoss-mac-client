@@ -389,7 +389,7 @@ static int currentFrame;
         {
             NSAlert *alert = [[NSAlert alloc] init];
             [alert addButtonWithTitle:@"OK"];
-            [alert setMessageText: NSLocalizedString(@"An error occured",@"An error occured")];
+            [alert setMessageText: NSLocalizedString(@"An error occurred",@"An error occurred")];
             [alert setInformativeText: NSLocalizedString(@"check your feed",@"check your feed")];
             [alert setAlertStyle:NSCriticalAlertStyle];
             [alert runModal];
@@ -692,7 +692,7 @@ static int currentFrame;
                 if (Ntilenumber < Nunread)  {
                     NSUserNotification *notification = [[NSUserNotification alloc] init];
                     notification.title = @"Selfoss";
-                    notification.informativeText = [NSString stringWithFormat:@"%d %@",Nnew ,NSLocalizedString(@"new item(s) avalaible",@"new item(s) avalaible")];
+                    notification.informativeText = [NSString stringWithFormat:@"%d %@",Nnew ,NSLocalizedString(@"new item(s) available",@"new item(s) available")];
                     notification.soundName = NSUserNotificationDefaultSoundName;
                     [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
                 }
