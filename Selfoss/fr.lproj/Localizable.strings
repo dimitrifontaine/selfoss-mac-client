@@ -6,6 +6,17 @@
   Copyright (c) 2015 Graphic-identité. All rights reserved.
 */
 
+//MENU
+
+"About Selfoss" = "A propos de Selfoss";
+"Preferences" = "Préférences…";
+"Copy" = "Copier";
+"Paste" = "Coller";
+"Fullscreen" = "Plein écran";
+"Reload Selfoss" = "Recherger Selfoss";
+"Hide Selfoss" = "Cacher Selfoss";
+"Quit Selfoss" = "Quitter Selfoss";
+
 
 
 //PREFERENCES

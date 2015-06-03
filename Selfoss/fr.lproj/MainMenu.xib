@@ -64,7 +64,7 @@
                             <menuItem isSeparatorItem="YES" id="144">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Hide Selfoss" hidden="YES" keyEquivalent="w" id="y6N-zS-tpl">
+                            <menuItem title="Hide Selfoss" keyEquivalent="w" id="y6N-zS-tpl">
                                 <connections>
                                     <action selector="hide:" target="-1" id="KCB-dp-uYw"/>
                                 </connections>
@@ -72,6 +72,17 @@
                             <menuItem title="Hide Selfoss" keyEquivalent="h" id="134">
                                 <connections>
                                     <action selector="hide:" target="-1" id="367"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Hide Others" keyEquivalent="h" id="145">
+                                <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                <connections>
+                                    <action selector="hideOtherApplications:" target="-1" id="368"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Show All" id="150">
+                                <connections>
+                                    <action selector="unhideAllApplications:" target="-1" id="370"/>
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="149">
@@ -104,6 +115,17 @@
                             <nil key="identifier"/>
                         </webPreferences>
                     </webView>
+                    <button toolTip="unread" id="9KA-9Z-KZ6">
+                        <rect key="frame" x="1060" y="8" width="20" height="20"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                        <buttonCell key="cell" type="bevel" bezelStyle="circular" image="picto-06" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="jSu-H6-nZ5">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="seeUnread:" target="494" id="WZc-bU-KAo"/>
+                        </connections>
+                    </button>
                     <button toolTip="stared" id="pDn-s5-vZn">
                         <rect key="frame" x="1004" y="8" width="20" height="20"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
@@ -159,35 +181,16 @@
                             <action selector="openPrefPanel:" target="494" id="X6G-AD-PSK"/>
                         </connections>
                     </button>
-                    <button toolTip="unread" id="9KA-9Z-KZ6">
-                        <rect key="frame" x="1060" y="8" width="20" height="20"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                        <buttonCell key="cell" type="bevel" bezelStyle="circular" image="picto-06" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="jSu-H6-nZ5">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="seeUnread:" target="494" id="WZc-bU-KAo"/>
-                        </connections>
-                    </button>
                 </subviews>
             </view>
             <point key="canvasLocation" x="236" y="338"/>
         </window>
         <customObject id="494" customClass="AppDelegate">
             <connections>
-                <outlet property="AboutSelfoss" destination="58" id="rXa-Pj-oXw"/>
                 <outlet property="AddText" destination="b2w-GP-psO" id="d4g-q2-UW4"/>
                 <outlet property="CancelText" destination="1DK-7V-4Us" id="Tv4-IC-5BD"/>
                 <outlet property="FeedLogin" destination="72k-qg-1Jc" id="AXv-5m-JyO"/>
                 <outlet property="FeedPassword" destination="Xzf-kP-f41" id="biP-eM-zpz"/>
-                <outlet property="MenuCopy" destination="fJa-DN-m4Y" id="slc-gs-v9R"/>
-                <outlet property="MenuFullscreen" destination="YoK-eD-oHE" id="WpD-zB-5e1"/>
-                <outlet property="MenuHide" destination="134" id="efO-rT-iyn"/>
-                <outlet property="MenuPaste" destination="ccG-Rv-o5Q" id="f4b-hh-36V"/>
-                <outlet property="MenuPreferences" destination="129" id="AYl-fc-IN5"/>
-                <outlet property="MenuQuit" destination="136" id="oiD-Nt-gcf"/>
-                <outlet property="MenuReload" destination="MMr-LF-ZKT" id="Tix-dI-BZ9"/>
                 <outlet property="ValidatePref" destination="iUt-TO-stK" id="ZDI-HQ-3mQ"/>
                 <outlet property="addFluxWindow" destination="FVN-bA-xew" id="lgW-9n-wKQ"/>
                 <outlet property="badgeCounter" destination="VOz-Rl-tAr" id="ZpI-7t-TYm"/>

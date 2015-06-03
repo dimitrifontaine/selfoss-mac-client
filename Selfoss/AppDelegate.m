@@ -210,7 +210,19 @@ static int currentFrame;
     [butStar setToolTip: NSLocalizedString(@"Stared", @"Stared")];
     [butAll setToolTip: NSLocalizedString(@"All items", @"All items")];
     [butNew setToolTip: NSLocalizedString(@"Unread", @"Unread")];
+    
+    
+    [AboutSelfoss setTitle: NSLocalizedString(@"About Selfoss",@"About Selfoss")];
+    [MenuPreferences setTitle: NSLocalizedString(@"Preferences",@"Preferences")];
+    [MenuCopy setTitle: NSLocalizedString(@"Copy",@"Copy")];
+    [MenuPaste setTitle: NSLocalizedString(@"Paste",@"Paste")];
+    [MenuFullscreen setTitle: NSLocalizedString(@"Fullscreen",@"Fullscreen")];
+    [MenuReload setTitle: NSLocalizedString(@"Reload Selfoss",@"Reload Selfoss")];
+    [MenuHide setTitle: NSLocalizedString(@"Hide Selfoss",@"Hide Selfoss")];
+    [MenuQuit setTitle: NSLocalizedString(@"Quit Selfoss",@"Quit Selfoss")];
 
+    
+    
 }
 
 

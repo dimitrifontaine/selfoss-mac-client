@@ -13,6 +13,16 @@
 @interface AppDelegate : NSObject <NSApplicationDelegate,NSURLDownloadDelegate,WKUIDelegate,NSUserNotificationCenterDelegate>
 {
     
+    IBOutlet NSMenuItem *AboutSelfoss;
+    IBOutlet NSMenuItem *MenuPreferences;
+    IBOutlet NSMenuItem *MenuCopy;
+    IBOutlet NSMenuItem *MenuPaste;
+    IBOutlet NSMenuItem *MenuFullscreen;
+    IBOutlet NSMenuItem *MenuReload;
+    IBOutlet NSMenuItem *MenuHide;
+    IBOutlet NSMenuItem *MenuQuit;
+    
+    
     IBOutlet NSButton *butPref;
     IBOutlet NSButton *butHide;
     IBOutlet NSButton *butMark;
