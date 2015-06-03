@@ -16,3 +16,6 @@ Selfoss Client features:
 - Fullscreen support
 - Notifications
 - RSS default app
+ 
+
+<img src ="https://github.com/dimitrifontaine/selfoss-mac-client/blob/master/img-readme.png"/>
