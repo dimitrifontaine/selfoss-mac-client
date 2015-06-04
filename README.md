@@ -12,7 +12,7 @@ Selfoss Client features:
 - Same selfoss design (this app is just like a web browser) 
 - Animated dock icon with badge counter
 - Toggle hide/unhide selfoss sidebar
-- selfoss shortkeys support
+- Selfoss shortkeys support
 - Fullscreen support
 - Notifications
 - RSS default app
