@@ -13,7 +13,7 @@
 "Copy" = "Kopieren";
 "Paste" = "Einfügen";
 "Fullscreen" = "Vollbild";
-"Reload Selfoss" = "Aktualisieren";
+"Reload Selfoss" = "Selfoss neu laden";
 "Hide Selfoss" = "Selfoss ausblenden";
 "Quit Selfoss" = "Selfoss beenden";
 
@@ -21,19 +21,19 @@
 
 //PREFERENCES
 
-"(go to github project page)" = "(auf Aktualisierungen prüfen - github)";
+"(go to github project page)" = "(zur GitHub Projektseite wechseln)";
 "Default RSS app" = "Standardprogramm für RSS";
 "Hide menu at startup" = "Menü beim Start ausblenden";
-"Auto-reload" = "Automatisch aktualisieren";
+"Auto-reload" = "Automatisch neu laden";
 "Animated dock icon" = "Dockicon animieren";
 "Notifications" = "Benachrichtigungen";
 "Fullscreen at startup" = "Vollbild beim Start";
-"Validate" = "Speichern";
-"seconds (active app)" = "Sek. (App aktiv)";
-"minutes (inactive app)" = "Min. (App inaktiv)";
+"Validate" = "Bestätigen";
+"seconds (active app)" = "Sekunden (App aktiv)";
+"minutes (inactive app)" = "Minuten (App inaktiv)";
 "badge counter refresh time interval" = "Kennzeichen Aktualisierungsintervall";
 "My Selfoss URL" = "URL der Selfoss Installation";
-"Check for updates at startup" = "Check for updates at startup";
+"Check for updates at startup" = "Aktualisierungen beim Start suchen";
 
 
 //ADD FEED
@@ -51,20 +51,20 @@
 
 //ERRORS
 
-"Bad feed URL" = "Bad feed URL";
-"impossible to initialize feed" = "impossible to initialize feed";
+"Bad feed URL" = "Fehlerhafte Feed URL";
+"impossible to initialize feed" = "Feed kann nicht initialisiert werden";
 
-"An error occurred" = "An error occurred";
-"check your feed" = "check your feed";
+"An error occurred" = "Ein Fehler ist aufgetreten";
+"check your feed" = "Bitte Feed überprüfen";
 
-"Not a valid Selfoss URL\nor protected with password" = "Not a valid Selfoss URL\nor protected with password";
+"Not a valid Selfoss URL\nor protected with password" = "Keine gültige Selfoss URL\noder passwortgeschützt";
 
 
 
 
 //OTHERS
 
-"new item(s) available" = "new item(s) available";
+"new item(s) available" = "neue(r) Artikel verfügbar";
 
 "Preferences" = "Einstellungen";
 "Hide menu" = "Menü umschalten";
