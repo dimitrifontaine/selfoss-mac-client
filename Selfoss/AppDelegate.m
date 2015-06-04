@@ -38,6 +38,7 @@ static int currentFrame;
 }
 
 
+
 -(void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     
@@ -165,9 +166,72 @@ static int currentFrame;
     [self reloadtimer];
     // [self redirectConsoleLogToDocumentFolder];
     
+    [self checkUpdate];
+}
+
+
+
+
+
+- (BOOL)checkUpdate {
+    /* first check for new version (will be nil if no active internet connection) */
     
+    
+    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"https://github.com/dimitrifontaine/selfoss-mac-client/blob/master/version.txt"]];
+    NSData *data = [NSData dataWithContentsOfURL:URL];
+    NSString *latestVersionString = [NSString stringWithUTF8String:[data bytes]];
+    NSString *actualVerion = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+    NSLog(@"version server %@",latestVersionString);
+    NSLog(@"version installée %@",actualVerion);
+    if (![latestVersionString isEqualToString:actualVerion]) {
+        
+        NSAlert *alert = [[NSAlert alloc] init];
+        [alert addButtonWithTitle:@"Download"];
+        [alert addButtonWithTitle:@"Cancel"];
+        [alert setMessageText:@"Check for Updates…"];
+        [alert setInformativeText:@"An update is available,\rdo you want to download it?"];
+        [alert setAlertStyle:NSWarningAlertStyle];
+        if ([alert runModal] == NSAlertFirstButtonReturn)
+        {
+            
+            
+            /*  NSDictionary* errorDict;
+             NSAppleEventDescriptor* returnDescriptor = NULL;
+             NSString *myScript = [NSString stringWithFormat:
+             @"set myFile to (POSIX path of (path to desktop) as text) & \"selfoss.dmg\"\ndo shell script \"curl -L \" & \"http://server.doublethinking.fr/selfoss.dmg\" & \" -o \" & myFile"];
+             NSAppleScript* appleScript = [[NSAppleScript alloc] initWithSource: (NSString *)myScript];
+             returnDescriptor = [appleScript executeAndReturnError: &errorDict];
+             */
+            
+            
+            [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://server.doublethinking.fr/selfoss/selfoss.php"]];
+            NSLog(@"Download");
+            [NSApp performSelector:@selector(terminate:) withObject:nil afterDelay:0.0];
+            
+        }
+        [alert release];
+        return NO;
+    }
+    else
+    {
+        return YES;
+    }
     
 }
+
+- (IBAction)checkUpdate2:(id)sender {
+    if ([self checkUpdate])
+    {
+        NSAlert *alert = [[NSAlert alloc] init];
+        [alert addButtonWithTitle:@"OK"];
+        [alert setMessageText:@"Check for Updates…"];
+        [alert setInformativeText:@"you already have the latest version"];
+        [alert runModal];
+    }
+}
+
+
+
 
 - (void) redirectConsoleLogToDocumentFolder
 {
