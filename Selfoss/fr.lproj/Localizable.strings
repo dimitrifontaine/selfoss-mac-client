@@ -33,6 +33,8 @@
 "minutes (inactive app)" = "minutes (app inactive)";
 "badge counter refresh time interval" = "Rafraîchissement du compteur";
 "My Selfoss URL" = "Mon adresse Selfoss";
+"Check for updates at startup" = "Vérifier les mises à jour";
+
 
 
 //ADD FEED

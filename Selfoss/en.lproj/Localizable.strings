@@ -33,6 +33,8 @@
 "minutes (inactive app)" = "minutes (inactive app)";
 "badge counter refresh time interval" = "badge counter refresh time interval";
 "My Selfoss URL" = "My Selfoss URL";
+"Check for updates at startup" = "Check for updates at startup";
+
 
 
 //ADD FEED

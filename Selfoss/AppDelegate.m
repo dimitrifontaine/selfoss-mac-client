@@ -20,6 +20,7 @@ static int currentFrame;
 #define selfossCheck @"checkyes"
 #define selfossNotify @"notifyyes"
 #define selfossAnim @"animyes"
+#define selfossCheck @"checkyes"
 
 
 - (id)init {
@@ -55,6 +56,7 @@ static int currentFrame;
     if ([defaults stringForKey:selfossFullScreen] == nil)[defaults setObject:selfossFullScreen forKey:selfossFullScreen];
     if ([defaults stringForKey:selfossNotify] == nil)[defaults setObject:selfossNotify forKey:selfossNotify];
     if ([defaults stringForKey:selfossAnim] == nil)[defaults setObject:selfossAnim forKey:selfossAnim];
+        if ([defaults stringForKey:selfossCheck] == nil)[defaults setObject:selfossCheck forKey:selfossCheck];
     
     if ([defaults stringForKey:selfossURL] == nil){
         [defaults setObject:selfossURL forKey:selfossURL];
@@ -143,7 +145,15 @@ static int currentFrame;
         [menuAnim setState:NSOffState];
     }
     
-    
+    if ([[defaults stringForKey:selfossCheck] isEqualToString:@"checkyes"])
+    {
+        [menuCheckUpdates setState:NSOnState];
+        [self checkUpdate];
+    }
+    else
+    {
+        [menuCheckUpdates setState:NSOffState];
+    }
     
     
     
@@ -165,8 +175,7 @@ static int currentFrame;
     }
     [self reloadtimer];
     // [self redirectConsoleLogToDocumentFolder];
-    
-    [self checkUpdate];
+
 }
 
 
@@ -177,7 +186,7 @@ static int currentFrame;
     /* first check for new version (will be nil if no active internet connection) */
     
     
-    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"https://github.com/dimitrifontaine/selfoss-mac-client/blob/master/version.txt"]];
+    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"https://raw.githubusercontent.com/dimitrifontaine/selfoss-mac-client/master/version.txt"]];
     NSData *data = [NSData dataWithContentsOfURL:URL];
     NSString *latestVersionString = [NSString stringWithUTF8String:[data bytes]];
     NSString *actualVerion = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
@@ -193,21 +202,9 @@ static int currentFrame;
         [alert setAlertStyle:NSWarningAlertStyle];
         if ([alert runModal] == NSAlertFirstButtonReturn)
         {
-            
-            
-            /*  NSDictionary* errorDict;
-             NSAppleEventDescriptor* returnDescriptor = NULL;
-             NSString *myScript = [NSString stringWithFormat:
-             @"set myFile to (POSIX path of (path to desktop) as text) & \"selfoss.dmg\"\ndo shell script \"curl -L \" & \"http://server.doublethinking.fr/selfoss.dmg\" & \" -o \" & myFile"];
-             NSAppleScript* appleScript = [[NSAppleScript alloc] initWithSource: (NSString *)myScript];
-             returnDescriptor = [appleScript executeAndReturnError: &errorDict];
-             */
-            
-            
-            [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://server.doublethinking.fr/selfoss/selfoss.php"]];
+            [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://github.com/dimitrifontaine/selfoss-mac-client/blob/master/Selfoss.zip"]];
             NSLog(@"Download");
             [NSApp performSelector:@selector(terminate:) withObject:nil afterDelay:0.0];
-            
         }
         [alert release];
         return NO;
@@ -255,6 +252,7 @@ static int currentFrame;
     [menuAnim setTitle: NSLocalizedString(@"Animated dock icon", @"Animated dock icon")];
     [menuNotify setTitle: NSLocalizedString(@"Notifications", @"Notifications")];
     [menuFullscreen setTitle: NSLocalizedString(@"Fullscreen at startup", @"Fullscreen at startup")];
+        [menuCheckUpdates setTitle: NSLocalizedString(@"Check for updates at startup", @"Check for updates at startup")];
     [ValidatePref setTitle: NSLocalizedString(@"Validate", @"Validate")];
     [badgeCounter setStringValue: NSLocalizedString(@"badge counter refresh time interval", @"badge counter refresh time interval")];
     [selfossURLtext setStringValue: NSLocalizedString(@"My Selfoss URL", @"My Selfoss URL")];
@@ -576,6 +574,15 @@ static int currentFrame;
         [defaults setObject:@"animno" forKey:selfossAnim];
     }
     
+    
+    if ([menuCheckUpdates state] == NSOnState)
+    {
+        [defaults setObject:@"checkyes" forKey:selfossCheck];
+    }
+    else
+    {
+        [defaults setObject:@"checkno" forKey:selfossCheck];
+    }
     
     
     NSString *val;

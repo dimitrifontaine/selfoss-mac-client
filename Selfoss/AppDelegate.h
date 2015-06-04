@@ -40,6 +40,8 @@
     IBOutlet NSTextField *selfossUrlField;
 
     IBOutlet NSPanel *prefPanel;
+
+    IBOutlet NSButton *menuCheckUpdates;
     IBOutlet NSButton *checkdefault;
     IBOutlet NSButton *menuHiddenPref;
     IBOutlet NSButton *menuReloadPref;
