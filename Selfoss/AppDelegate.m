@@ -785,19 +785,19 @@ static int currentFrame;
     unactivetime = [[[defaults stringForKey:selfossUnactive] stringByTrimmingCharactersInSet:[[NSCharacterSet decimalDigitCharacterSet] invertedSet]] intValue];
     
     NSRunningApplication* runningApp = [[NSWorkspace sharedWorkspace] frontmostApplication];
-    [_timer invalidate]; _timer = nil;
+    [timer invalidate]; timer = nil;
     
     
     if ([runningApp.bundleIdentifier isEqual: [[NSBundle mainBundle] bundleIdentifier]])
     {
-        _timer = [NSTimer scheduledTimerWithTimeInterval: (NSTimeInterval)activetime
+        timer = [NSTimer scheduledTimerWithTimeInterval: (NSTimeInterval)activetime
                                                   target: self
                                                 selector:@selector(onTick:)
                                                 userInfo: nil repeats:YES];
     }
     else
     {
-        _timer = [NSTimer scheduledTimerWithTimeInterval:((NSTimeInterval)unactivetime*60)
+        timer = [NSTimer scheduledTimerWithTimeInterval:((NSTimeInterval)unactivetime*60)
                                                   target:self
                                                 selector:@selector(onTick:)
                                                 userInfo:nil

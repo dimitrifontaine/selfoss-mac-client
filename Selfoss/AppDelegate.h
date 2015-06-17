@@ -85,7 +85,7 @@
     
     
     NSMutableSet *otherWebViews;
-    NSTimer *_timer;
+    NSTimer *timer;
 
     NSTimer *animTimer;
         NSString *urlStr;
