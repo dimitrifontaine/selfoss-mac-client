@@ -241,7 +241,7 @@ static int currentFrame;
         [alert setAlertStyle:NSWarningAlertStyle];
         if ([alert runModal] == NSAlertFirstButtonReturn)
         {
-            [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://github.com/dimitrifontaine/selfoss-mac-client/blob/master/Selfoss.zip"]];
+            [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://github.com/dimitrifontaine/selfoss-mac-client"]];
             NSLog(@"Download");
             [NSApp performSelector:@selector(terminate:) withObject:nil afterDelay:0.0];
         }
