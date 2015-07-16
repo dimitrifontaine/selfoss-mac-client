@@ -92,7 +92,7 @@
     
     NSString *tileNumber;
     
-
+    BOOL firstLaunch;
     
 }
 

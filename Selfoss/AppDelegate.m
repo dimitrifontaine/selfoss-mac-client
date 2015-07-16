@@ -45,7 +45,7 @@ static int currentFrame;
     
     [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
     
-    BOOL firstLaunch = '\0';
+    firstLaunch = '\0';
 
     [self launchAnim];
     
@@ -164,7 +164,7 @@ static int currentFrame;
     [[selfossView preferences] setJavaScriptCanOpenWindowsAutomatically:YES];
     
     //   [selfossView setShouldUpdateWhileOffscreen:YES];
-    [[selfossView mainFrame] loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[defaults stringForKey:selfossURL]]]];
+ /*   [[selfossView mainFrame] loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[defaults stringForKey:selfossURL]]]];
     
     
     if (firstLaunch)  {  [NSApp beginSheet:prefPanel
@@ -173,13 +173,52 @@ static int currentFrame;
                             didEndSelector:nil
                                contextInfo:nil];
     }
-    [self reloadtimer];
+    [self reloadtimer];*/
     // [self redirectConsoleLogToDocumentFolder];
+    
+    [self connectServer];
 
 }
 
 
+- (void)connectServer{
+    if ([self hasInternet] == YES)
+    {
+        NSLog(@"internet OK");
+        [[selfossView mainFrame] loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[defaults stringForKey:selfossURL]]]];
+        
+        
+        if (firstLaunch)  {  [NSApp beginSheet:prefPanel
+                                modalForWindow:(NSWindow *)selfossWindow
+                                 modalDelegate:self
+                                didEndSelector:nil
+                                   contextInfo:nil];
+        }
+        [self reloadtimer];
 
+    }
+    else
+    {
+        NSLog(@"NO internet");
+        usleep(1000000);
+        [self connectServer];
+        
+    }
+}
+
+- (bool)hasInternet {
+    NSURL *url = [[NSURL alloc] initWithString:selfossURL];
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:5.0];
+    BOOL connectedToInternet = NO;
+    if ([NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil]) {
+        connectedToInternet = YES;
+    }
+    //if (connectedToInternet)
+    //NSLog(@"We Have Internet!");
+    [request release];
+    [url release];
+    return connectedToInternet;
+}
 
 
 - (BOOL)checkUpdate {
