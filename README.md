@@ -1,5 +1,5 @@
 # selfoss-mac-client
-A mac client for selfoss - version 1.18
+A mac client for selfoss - version 1.19
 
 Localizations :
 English, French, German (by Benedikt Hopmann).

@@ -145,15 +145,7 @@ static int currentFrame;
         [menuAnim setState:NSOffState];
     }
     
-    if ([[defaults stringForKey:selfossCheck] isEqualToString:@"checkyes"])
-    {
-        [menuCheckUpdates setState:NSOnState];
-        [self checkUpdate];
-    }
-    else
-    {
-        [menuCheckUpdates setState:NSOffState];
-    }
+
     
     
     
@@ -177,6 +169,17 @@ static int currentFrame;
     // [self redirectConsoleLogToDocumentFolder];
     
     [self connectServer];
+    
+    
+    if ([[defaults stringForKey:selfossCheck] isEqualToString:@"checkyes"])
+    {
+        [menuCheckUpdates setState:NSOnState];
+        [self checkUpdate];
+    }
+    else
+    {
+        [menuCheckUpdates setState:NSOffState];
+    }
 
 }
 
