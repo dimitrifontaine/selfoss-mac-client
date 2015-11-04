@@ -1,5 +1,9 @@
 # selfoss-mac-client
-A mac client for selfoss - version 1.19
+A mac client for selfoss - version 1.20
+
+!!! some problems since El Capitan  !!!
+(help welcome, i don't have time)
+
 
 Localizations :
 English, French, German (by Benedikt Hopmann).

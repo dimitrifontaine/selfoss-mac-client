@@ -168,7 +168,7 @@ static int currentFrame;
     [self reloadtimer];*/
     // [self redirectConsoleLogToDocumentFolder];
     
-    [self connectServer];
+  //  [self connectServer];
     
     
     if ([[defaults stringForKey:selfossCheck] isEqualToString:@"checkyes"])
@@ -198,6 +198,8 @@ static int currentFrame;
                                    contextInfo:nil];
         }
         [self reloadtimer];
+     
+
 
     }
     else

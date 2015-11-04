@@ -10,7 +10,7 @@
 #import <WebKit/WebKit.h>
 
 
-@interface AppDelegate : NSObject <NSApplicationDelegate,NSURLDownloadDelegate,WKUIDelegate,NSUserNotificationCenterDelegate>
+@interface AppDelegate : NSObject <NSApplicationDelegate,NSURLDownloadDelegate,WKUIDelegate,NSUserNotificationCenterDelegate,WebUIDelegate,WebPolicyDelegate,WebFrameLoadDelegate>
 {
     
     IBOutlet NSMenuItem *AboutSelfoss;

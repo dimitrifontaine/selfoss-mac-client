@@ -184,7 +184,7 @@
 		2771D9A917FB2D3C006D74BD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Graphic-identité";
 			};
 			buildConfigurationList = 2771D9AC17FB2D3C006D74BD /* Build configuration list for PBXProject "selfoss" */;
@@ -297,6 +297,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -356,6 +357,7 @@
 				INFOPLIST_FILE = "Selfoss/Selfoss-Info.plist";
 				New_Setting = "";
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "GI.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -376,6 +378,7 @@
 				INFOPLIST_FILE = "Selfoss/Selfoss-Info.plist";
 				New_Setting = "";
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "GI.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
