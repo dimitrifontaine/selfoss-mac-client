@@ -155,8 +155,8 @@ static int currentFrame;
     [[selfossView preferences] setJavaScriptEnabled:YES];
     [[selfossView preferences] setJavaScriptCanOpenWindowsAutomatically:YES];
     
-    //   [selfossView setShouldUpdateWhileOffscreen:YES];
- /*   [[selfossView mainFrame] loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[defaults stringForKey:selfossURL]]]];
+       [selfossView setShouldUpdateWhileOffscreen:YES];
+    [[selfossView mainFrame] loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[defaults stringForKey:selfossURL]]]];
     
     
     if (firstLaunch)  {  [NSApp beginSheet:prefPanel
@@ -165,10 +165,10 @@ static int currentFrame;
                             didEndSelector:nil
                                contextInfo:nil];
     }
-    [self reloadtimer];*/
-    // [self redirectConsoleLogToDocumentFolder];
+    [self reloadtimer];
+ [self redirectConsoleLogToDocumentFolder];
     
-  //  [self connectServer];
+  [self connectServer];
     
     
     if ([[defaults stringForKey:selfossCheck] isEqualToString:@"checkyes"])
