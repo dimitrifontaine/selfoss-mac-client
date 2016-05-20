@@ -166,9 +166,9 @@ static int currentFrame;
                                contextInfo:nil];
     }
     [self reloadtimer];
- [self redirectConsoleLogToDocumentFolder];
+    [self redirectConsoleLogToDocumentFolder];
     
-  [self connectServer];
+    [self connectServer];
     
     
     if ([[defaults stringForKey:selfossCheck] isEqualToString:@"checkyes"])
@@ -762,7 +762,7 @@ static int currentFrame;
 // TIMERS ----------------------------------------------------------------------------
 
 - (void)onTick:timer {
-    NSLog(@"ontick2");
+   // NSLog(@"ontick2");
     [self badgeupdate];
 }
 
@@ -792,7 +792,10 @@ static int currentFrame;
             int Ntilenumber = [tileNumber floatValue];
             int Nnew = Nunread - Ntilenumber;
             
-            if ([unread isEqual: @"0"])
+            
+            NSLog(@"%@",unread);
+            
+            if (Nunread == 0)
             {
                 [tile setBadgeLabel:@""];
                 [animTimer invalidate]; animTimer = nil;
@@ -800,7 +803,8 @@ static int currentFrame;
             }
             else
             {
-                [tile setBadgeLabel:unread];
+                NSLog(@"badge");
+                [tile setBadgeLabel:[NSString stringWithFormat:@"%d",Nunread]];
             }
 
             if ([[defaults stringForKey:selfossNotify] isEqualToString:@"notifyyes"]) {
@@ -947,7 +951,7 @@ static int currentFrame;
 - (void)updateImage:(NSTimer*)timer
 {
     currentFrame++;
-    NSLog(@"anim %d",currentFrame);
+    //NSLog(@"anim %d",currentFrame);
     [NSApp setApplicationIconImage: [NSImage imageNamed:[NSString stringWithFormat:@"selfoss0%d", currentFrame]]];
     if (currentFrame == 4) {currentFrame = 0;}
 }
