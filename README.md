@@ -1,5 +1,5 @@
 # selfoss-mac-client
-A mac client for selfoss - version 1.21
+A mac client for selfoss - version 1.23
 
 !!! some problems since El Capitan  !!!
 (help welcome, i don't have time)
